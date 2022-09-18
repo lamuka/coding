@@ -1,0 +1,119 @@
+<!doctype html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="ru">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+<!-- <script>
+var expanded = false;
+
+function showCheckboxes() {
+  var checkboxes = document.getElementById("checkboxes");
+  if (!expanded) {
+    checkboxes.style.display = "block";
+    expanded = true;
+  } else {
+    checkboxes.style.display = "none";
+    expanded = false;
+  }
+}
+</script> -->
+
+<style type="text/css">
+.multiselect {
+  width: 200px;
+}
+
+.selectBox {
+  position: relative;
+}
+
+.selectBox select {
+  width: 100%;
+  font-weight: bold;
+}
+
+.overSelect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+#checkboxes {
+  display: none;
+  border: 1px #dadada solid;
+}
+
+#checkboxes label {
+  display: block;
+}
+
+#checkboxes label:hover {
+  background-color: #1e90ff;
+}
+</style>
+<script>
+$(function (){
+	$("#accesskey").val("")
+	$("#secretkey").val("")
+	$("#awsregion").val("");
+	$("#instancetype").val("t3a.large")
+	$("#instancequantity").val("2")
+	$("#instancename").val("amazon")
+	$("#rootpassword").val("")
+	$("#memorylimit").val("7000")
+});
+</script>
+
+<form action="save.php" id="formContact1" method="post">
+<div style="padding-left:25px;"><input style="width:200px;" id="accesskey" name="access" placeholder="aws_access_key_id" type="text">&nbsp;&nbsp;aws_access_key_id</div><br>
+<div style="padding-left:25px;"><input style="width:200px;" id="secretkey" name="secret" placeholder="aws_secret_access_key" type="text">&nbsp;&nbsp;aws_secret_access_key</div><br>
+<div style="padding-left:25px;"><input type="Submit" value="Save all data"></div><br><br>
+</form>
+
+<form action="amazon.php" id="formContact4" method="post">
+<div style="padding-left:25px;"><select id="awsregion" name="region">
+<option value="eu-central-1">eu-central-1</option>
+<option value="eu-north-1">eu-north-1</option>
+<option value="eu-south-1">eu-south-1</option>
+<option value="eu-west-3">eu-west-3</option>
+<option value="eu-west-2">eu-west-2</option>
+<option value="eu-west-1">eu-west-1</option>
+<option value="us-east-1">us-east-1</option>
+<option value="us-east-2">us-east-2</option>
+<option value="us-west-1">us-west-1</option>
+<option value="us-west-2">us-west-2</option>
+<option value="ap-south-1">ap-south-1</option>
+<option value="ap-northeast-3">ap-northeast-3</option>
+<option value="ap-northeast-2">ap-northeast-2</option>
+<option value="me-south-1">me-south-1</option>
+<option value="ap-northeast-1">ap-northeast-1</option>
+<option value="sa-east-1">sa-east-1</option>
+<option value="ca-central-1">ca-central-1</option>
+<option value="ap-east-1">ap-east-1</option>
+<option value="ap-southeast-1">ap-southeast-1</option>
+<option value="ap-southeast-2">ap-southeast-2</option>
+</select>&nbsp;&nbsp;select aws region</div><br>
+<div style="padding-left:25px;"><input style="width:200px;" id="instancetype" name="type" placeholder="instance type" type="text">&nbsp;&nbsp;instance type</div><br>
+<div style="padding-left:25px;"><input style="width:200px;" id="instancequantity" name="quantity" placeholder="instance quantity ec2" type="text">&nbsp;&nbsp;instance quantity ec2</div><br>
+<div style="padding-left:25px;"><input style="width:200px;" id="instancename" name="name" placeholder="instance name" type="text">&nbsp;&nbsp;instance name</div><br>
+<div style="padding-left:25px;"><input style="width:200px;" id="rootpassword" name="password" placeholder="root password" type="text">&nbsp;&nbsp;root password</div><br>
+<div style="padding-left:25px;"><input style="width:200px;" id="memorylimit" name="memlim" placeholder="PHP memory limit" type="text">&nbsp;&nbsp;PHP memory limit</div><br>
+<div style="padding-left:25px;"><input type="Submit" value="Prepare instances script"></div><br><br><br>
+</form>
+
+
+<div style="padding-left:25px;"><a href="./createall.txt" target="_blank">Instances create commands</a></div><br>
+<div style="padding-left:25px;"><a href="./terminateall.txt" target="_blank">Instances terminate commands</a></div><br>
+<div style="padding-left:25px;"><a href="./startall.txt" target="_blank">Instances start commands</a></div><br>
+<div style="padding-left:25px;"><a href="./stopall.txt" target="_blank">Instances stop commands</a></div><br>
+<div style="padding-left:25px;"><a href="./getproxyall.txt" target="_blank">Instances proxy commands</a></div><br>
+<div style="padding-left:25px;"><a href="./getproxyall1.txt" target="_blank">Instances proxy1 list</a></div><br>
+<div style="padding-left:25px;"><a href="./getproxyall2.txt" target="_blank">Instances proxy2 list</a></div><br>
+
+</body>
+</html>

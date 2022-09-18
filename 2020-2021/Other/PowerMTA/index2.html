@@ -1,0 +1,43 @@
+<!doctype html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="ru">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+<script>
+$(function (){
+    $("#publicip").val("51.107.4.166")
+	$("#privateip").val("10.0.34.10")
+	$("#publicdomain").val("swiitzeernoorth11.switzerlandnorth.cloudapp.azure.com")
+	$("#adminip").val("0.0.0.0/0")
+	$("#consoleport").val("8888")
+	$("#listenerport").val("2025")
+	$("#smtphost").val("smtp.mail.ru:587")
+	$("#ipsnumber").val("50")
+	$("#resourcegroup").val("kirgudu")
+	$("#password").val("Valerka7788!")
+	$("#nicname").val("NicSwitzer")
+});
+</script>
+
+<form action="config_pmta.php" method="post" enctype="multipart/form-data">
+<div style="padding-left:25px;"><input type="file" name="fileToUpload" id="fileToUpload" required>Select file with email accounts</div><br>
+<div style="padding-left:25px;"><input style="width:200px;" id="publicip" name="pubip" placeholder="public ip" type="text">&nbsp;&nbsp;public ip</div><br>
+<div style="padding-left:25px;"><input style="width:200px;" id="privateip" name="privip" placeholder="private ip" type="text">&nbsp;&nbsp;private ip</div><br>
+<div style="padding-left:25px;"><input style="width:550px;" id="publicdomain" name="pubdom" placeholder="public domain" type="text">&nbsp;&nbsp;public domain</div><br>
+<div style="padding-left:25px;"><input style="width:200px;" id="adminip" name="admip" placeholder="admin ip" type="text">&nbsp;&nbsp;admin ip</div><br>
+<div style="padding-left:25px;"><input style="width:200px;" id="consoleport" name="conport" placeholder="pmta http console port" type="text">&nbsp;&nbsp;pmta http console port</div><br>
+<div style="padding-left:25px;"><input style="width:200px;" id="listenerport" name="lisport" placeholder="smtp listener port" type="text">&nbsp;&nbsp;smtp listener port</div><br>
+<div style="padding-left:25px;"><input style="width:200px;" id="smtphost" name="shost" placeholder="smtp host with port number" type="text">&nbsp;&nbsp;smtp host with port number</div><br>
+<div style="padding-left:25px;"><input style="width:200px;" id="ipsnumber" name="ipnum" placeholder="number of ips" type="text">&nbsp;&nbsp;number of ips</div><br>
+<div style="padding-left:25px;"><input style="width:200px;" id="resourcegroup" name="group" placeholder="azure resiurce group" type="text">&nbsp;&nbsp;azure resiurce group</div><br>
+<div style="padding-left:25px;"><input style="width:200px;" id="password" name="pass" placeholder="azure VM password" type="text">&nbsp;&nbsp;azure VM password</div><br>
+<div style="padding-left:25px;"><input style="width:200px;" id="nicname" name="nic" placeholder="azure nic name" type="text">&nbsp;&nbsp;azure nic name</div><br>
+<div style="padding-left:25px;"><input type="Submit" value="Submit"></div><br>
+</form>
+
+
+</body>
+</html>

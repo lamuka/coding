@@ -1,0 +1,77 @@
+<!doctype html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="ru">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+<script>
+$(function (){
+    $("#profilenumber").val("@wendyopulos.onmicrosoft.com");
+	$("#input1").val("");
+    $("#output1").val("");
+    $("#input2").val("");
+    $("#output2").val("");
+    $("#input3").val("");
+    $("#output3").val("");
+	$("#displayname").val("");
+    $("#location").val("UA");
+});
+</script>
+
+<script>
+$(function (){
+  $("#Clean").click(function(){
+    $("#profilenumber").val("");
+    $("#input1").val("");
+    $("#output1").val("");
+    $("#input2").val("");
+    $("#output2").val("");
+    $("#input3").val("");
+    $("#output3").val("");
+	$("#displayname").val("");
+    $("#location").val("");
+  })
+});
+</script>
+
+<script>
+$(function (){
+    $("#profilenumber1").val("denny@lipapopal.onmicrosoft.com derry@derrystevens.onmicrosoft.com nika@nikamoji.onmicrosoft.com donny@donnyua.onmicrosoft.com");
+});
+</script>
+
+
+<form action="office.php" id="formContact" method="post">
+
+<div style="padding-left:35px;padding-top:25px;"><input style="width:400px;" id="profilenumber" name="prof" placeholder="Учетная запись администратора Office365" type="text">&nbsp;&nbsp;Учетная запись администратора Office365</div><br><br>
+
+<div style="padding-left:35px;"><input style="width:250px;" id="input1" name="inp1" placeholder="Что изменить" type="text">&nbsp;&nbsp;Что изменить в конфиге PowerMTA
+&nbsp;&nbsp;<input style="width:250px;" id="output1" name="otp1" placeholder="На что изменить" type="text">&nbsp;&nbsp;На что изменить в конфиге PowerMTA</div><br>
+
+<div style="padding-left:35px;"><input style="width:250px;" id="input2" name="inp2" placeholder="Что изменить" type="text">&nbsp;&nbsp;Что изменить в конфиге PowerMTA
+&nbsp;&nbsp;<input style="width:250px;" id="output2" name="otp2" placeholder="На что изменить" type="text">&nbsp;&nbsp;На что изменить в конфиге PowerMTA</div><br>
+
+<div style="padding-left:35px;"><input style="width:250px;" id="input3" name="inp3" placeholder="Что изменить" type="text">&nbsp;&nbsp;Что изменить в конфиге PowerMTA
+&nbsp;&nbsp;<input style="width:250px;" id="output3" name="otp3" placeholder="На что изменить" type="text">&nbsp;&nbsp;На что изменить в конфиге PowerMTA</div><br><br>
+
+<div style="padding-left:35px;"><input style="width:250px;" id="displayname" name="name" placeholder="Имя отправителя" type="text">&nbsp;&nbsp;Имя отправителяб которое будет в письме</div><br>
+
+<div style="padding-left:35px;"><input style="width:250px;" id="location" name="loc" placeholder="Регион лицензии" type="text" required pattern="[A-Z]{2}">&nbsp;&nbsp;Регион лицензии 2 буквы</div><br>
+
+<div style="padding-left:35px;"><input type="Submit" value="Выполнить"></div><br><br>
+
+<div style="padding-left:35px;"><button onclick="Clean()" id="Clean" title="Clean Form">&nbsp;&nbsp;Очистить форму</button></div>
+
+</form>
+
+<form action="office1.php" id="formContact1" method="post">
+
+<div style="padding-left:35px;padding-top:25px;"><input style="width:400px;" id="profilenumber1" name="prof1" placeholder="Учетные записи администратора Office365" type="text">&nbsp;&nbsp;Учетные записи администратора Office365</div><br><br>
+
+<div style="padding-left:35px;"><input type="Submit" value="Выполнить"></div><br><br>
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!doctype html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="ru">
+<title>ACCOUNTS</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+
+<script>
+var expanded = false;
+
+function showCheckboxes() {
+  var checkboxes = document.getElementById("checkboxes");
+  if (!expanded) {
+    checkboxes.style.display = "block";
+    expanded = true;
+  } else {
+    checkboxes.style.display = "none";
+    expanded = false;
+  }
+}
+</script>
+
+<style type="text/css">
+.multiselect {
+  width: 200px;
+}
+
+.selectBox {
+  position: relative;
+}
+
+.selectBox select {
+  width: 100%;
+  font-weight: bold;
+}
+
+.overSelect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+#checkboxes {
+  display: none;
+  border: 1px #dadada solid;
+}
+
+#checkboxes label {
+  display: block;
+}
+
+#checkboxes label:hover {
+  background-color: #1e90ff;
+}
+</style>
+
+<script>
+$(function (){
+	$("#accountslist").val("")
+	$("#smtpthreads").val("1")
+	$("#daylimit").val("0")
+	$("#fromemail").val("")
+	$("#replyemail").val("")
+	$("#usessl").val("")
+	$("#accountlimit").val("0")
+	$("#linkproxy").val("")
+	$("#proxylist").val("")
+});
+</script>
+
+
+<table style="width:100%">
+<tr>
+<td style="width:50%">
+<form action="accounts.php" method="post" enctype="multipart/form-data" style="border-bottom: 1px solid; padding-top:25px;">
+<div style="padding-left:25px;">ATOMIC SETTINGS</div><br>
+<div style="padding-left:25px;"><input style="width:550px;" id="smtpthreads" name="threads" placeholder="Connections to host (threads)" type="text">&nbsp;&nbsp;Connections to host (threads)</div>
+<div style="padding-left:25px;"><input style="width:200px;" id="daylimit" name="limit" placeholder="SMTP account day limit" type="text">&nbsp;&nbsp;SMTP account day limit</div><br>
+<div style="padding-left:25px;">MAILER KING SETTINGS</div><br>
+<div style="padding-left:25px;"><input style="width:550px;" id="fromemail" name="fremail" placeholder="From Email" type="email">&nbsp;&nbsp;From Email</div>
+<div style="padding-left:25px;"><input style="width:550px;" id="replyemail" name="repemail" placeholder="Reply-To Email" type="email">&nbsp;&nbsp;Reply-To Email</div>
+<div style="padding-left:25px;"><input style="width:550px;" id="usessl" name="ussl" placeholder="Leave blank for yes or put no" type="text">&nbsp;&nbsp;Use SSL?</div>
+<div style="padding-left:25px;"><input style="width:550px;" id="accountlimit" name="acclimit" placeholder="Account hourly limit" type="text">&nbsp;&nbsp;Account hourly limit (msg/hour)</div>
+<div style="padding-left:25px;"><input style="width:550px;" id="linkproxy" name="lproxy" placeholder="Leave blank for no or put yes" type="text">&nbsp;&nbsp;Link account to proxy?</div><br><br>
+<div style="padding-left:25px;"><input type="file" name="fileToUpload[]" multiple>Select files with email accounts</div><br>
+<div style="padding-left:25px;"><input style="width:550px;" id="accountslist" name="acclist" placeholder="Accounts list" type="textarea">&nbsp;&nbsp;Or paste accounts here</div><br>
+<div style="padding-left:25px;"><input style="border: 3px solid;" type="Submit" value="ACCOUNTS CONFIG"></div><br>
+</form>
+
+
+<form action="accounts_proxy.php" method="post" enctype="multipart/form-data" style="border-bottom: 1px solid; padding-top:25px;">
+<div style="padding-left:25px;"><input type="file" name="fileToUpload1" id="fileToUpload1"><br>Select file with proxy</div><br>
+<div style="padding-left:25px;"><input style="width:550px;" id="proxylist" name="prlist" placeholder="Proxy list" type="textarea">&nbsp;&nbsp;Or paste proxy here</div><br>
+<div style="padding-left:25px;"><input style="border: 3px solid;" type="Submit" value="PROXY MAKE"></div><br>
+</form>
+
+<form action="accounts_parse.php" method="post" enctype="multipart/form-data" style="border-bottom: 1px solid; padding-top:25px;">
+<div style="padding-left:25px;"><input type="file" name="fileToUpload2[]" multiple><br>Select files with accounts to parse</div><br>
+<div style="padding-left:25px;"><input style="border: 3px solid;" type="Submit" value="ACCOUNTS PARSE"></div><br>
+</form>
+
+<form action="delete_duplicates.php" method="post" enctype="multipart/form-data" style="border-bottom: 1px solid; padding-top:25px;">
+<div style="padding-left:25px;"><input type="file" name="fileToUpload3[]" multiple><br>Select files to delete duplicates</div><br>
+<div style="padding-left:25px;"><input style="width:550px;" id="deldub" name="ddub" placeholder="List" type="textarea">&nbsp;&nbsp;Or paste text here</div><br>
+<div style="padding-left:25px;"><input style="border: 3px solid;" type="Submit" value="UNIQUE ACCOUNTS"></div><br>
+</form>
+</td>
+
+<td style="width:auto">
+<div style="padding-left:25px;"><a href="./smtp/atomic.csv" download>DOWNLOAD ATOMIC config file</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="./smtp/atomic.txt" target="_blank">OPEN ATOMIC config file</a></div><br><br>
+<div style="padding-left:25px;"><a href="./smtp/mailerking.txt" download>DOWNLOAD MAILERKING config file</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="./smtp/mailerking.txt" target="_blank">OPEN MAILERKING config file</a></div><br><br>
+<div style="padding-left:25px; border-bottom: 1px solid; padding-top:25px;"><a href="./smtp/shuffle.txt" download>DOWNLOAD RANDOMIZED accounts</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="./smtp/shuffle.txt" target="_blank">OPEN RANDOMIZED accounts</a></div><br><br>
+<div style="padding-left:25px;"><a href="./smtp/ips.txt" download>DOWNLOAD PROXY file for WEBIMITATION/MAILERKING</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="./smtp/ips.txt" target="_blank">OPEN PROXY file for WEBIMITATION/MAILERKING</a></div><br><br>
+<div style="padding-left:25px;"><a href="./smtp/ips1.txt" download>DOWNLOAD PROXY file for MAILBOT</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="./smtp/ips1.txt" target="_blank">OPEN PROXY file for MAILBOT</a></div><br><br>
+<div style="padding-left:25px;"><a href="./smtp/ips2.txt" download>DOWNLOAD PROXY file for ATOMIC</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="./smtp/ips2.txt" target="_blank">OPEN PROXY file for ATOMIC</a></div><br><br>
+<div style="padding-left:25px;"><a href="./smtp/ips3.txt" download>DOWNLOAD PROXY1 file for ATOMIC</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="./smtp/ips3.txt" target="_blank">OPEN PROXY1 file for ATOMIC</a></div><br><br>
+<div style="padding-left:25px;"><a href="./smtp/ips7.txt" download>DOWNLOAD PROXY FROM ATOMIC CHECK</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="./smtp/ips7.txt" target="_blank">DOWNLOAD PROXY FROM ATOMIC CHECK</a></div><br><br>
+<div style="padding-left:25px;"><a href="./smtp/ips5.txt" download>DOWNLOAD PROXY file for Epochta</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="./smtp/ips5.txt" target="_blank">OPEN PROXY file for Epochta</a></div><br><br>
+<div style="padding-left:25px;"><a href="./smtp/ips6.txt" download>DOWNLOAD PROXY1 file for Epochta</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="./smtp/ips6.txt" target="_blank">OPEN PROXY1 file for Epochta</a></div><br><br>
+<div style="padding-left:25px; border-bottom: 1px solid; padding-top:25px;"><a href="./smtp/ips4.txt" download>DOWNLOAD RANDOMIZED proxy list</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="./smtp/ips4.txt" target="_blank">OPEN RANDOMIZED proxy list</a></div><br><br>
+<div style="padding-left:25px;"><a href="./smtp/ready.zip" download>DOWNLOAD SORT ACCOUNTS ZIP</a></div><br><br>
+<div style="padding-left:25px;"><a href="./smtp/unique.txt" download>DOWNLOAD Unique file</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="./smtp/unique.txt" target="_blank">OPEN Unique file</a></div><br><br>
+</td>
+</tr>
+</table>
+
+</body>
+</html>

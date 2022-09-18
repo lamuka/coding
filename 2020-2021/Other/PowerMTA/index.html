@@ -1,0 +1,39 @@
+<!doctype html>
+<head>
+</head>
+<body>
+
+<form action="putserver.php" id="formContact" method="post">
+<div>serv&nbsp;&nbsp;<input style="width:200px;" id="input-servernum" name="servernum" placeholder="Server number" type="text" required pattern="\d{1,4}"></div><br>
+<div><input style="width:400px;" id="input-ips" name="ips" placeholder="IPs" type="text" required pattern="(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}(,|;| )){0,}((\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})(| ){0,}){1}"></div><br>
+<div><input style="width:400px;" id="input-domain" name="domain" placeholder="Domain" type="text" required pattern="\w{1,}\.\w{1,5}"></div><br>
+<div><input style="width:400px;" id="input-monitorips" name="monitorips" placeholder="Pmta monitor IPs" type="text" required pattern="(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}(,|;| )){0,}((\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})(| ){0,}){1}"></div><br>
+<div><input style="width:400px;" id="input-adminips" name="adminips" placeholder="Pmta admin IPs" type="text" required pattern="(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}(,|;| )){0,}((\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})(| ){0,}){1}"></div><br>
+<!-- <div><input onclick="AjaxFormRequest('resultMessage', 'formContact', 'putserver.php')" type="Submit" value="Send"></div> -->
+<div><input type="Submit" value="Send"></div><br>
+</form>
+
+<form action="index.html" id="index" method="post">
+<div><input type="Submit" value="Reload"></div>
+</form>
+
+<form action="config_sql.php" id="sql" method="post">
+<div>serv&nbsp;&nbsp;<input style="width:200px;" id="load-servernum" name="servernumload" placeholder="Server number" type="text" required pattern="\d{1,4}"></div><br>
+<!-- <div><input onclick="AjaxSqlRequest('resultMessage', 'sql', 'config_sql.php')" type="Submit" value="PMTA"></div> -->
+<div><input type="Submit" value="Create PMTA config"></div><br>
+</form>
+
+
+<!-- <form action="config.php" id="formContact1" method="post">
+<div>serv&nbsp;&nbsp;<input style="width:200px;" id="input-servernum" name="servernum" placeholder="Server number" type="text" required pattern="\d{1,4}"></div><br>
+<div><input style="width:400px;" id="input-ips" name="ips" placeholder="IPs" type="text" required pattern="(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}(,|;| )){0,}((\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})(| ){0,}){1}"></div><br>
+<div><input style="width:400px;" id="input-domain" name="domain" placeholder="Domain" type="text" required pattern="\w{1,}\.\w{1,5}"></div><br>
+<div><input style="width:400px;" id="input-monitorips" name="monitorips" placeholder="Pmta monitor IPs" type="text" required pattern="(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}(,|;| )){0,}((\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})(| ){0,}){1}"></div><br>
+<div><input style="width:400px;" id="input-adminips" name="adminips" placeholder="Pmta admin IPs" type="text" required pattern="(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}(,|;| )){0,}((\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})(| ){0,}){1}"></div><br>
+<div><input onclick="AjaxFormRequest('resultMessage', 'formContact', 'putserver.php')" type="button" value="Send"></div>
+<div><input type="Submit" value="Send"></div><br>
+</form> -->
+<p id="resultMessage"></p>
+</body>
+</html>
+

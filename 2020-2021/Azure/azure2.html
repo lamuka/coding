@@ -1,0 +1,202 @@
+<!doctype html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="ru">
+<title>AZURE2</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+
+<script>
+var expanded = false;
+
+function showCheckboxes() {
+  var checkboxes = document.getElementById("checkboxes");
+  if (!expanded) {
+    checkboxes.style.display = "block";
+    expanded = true;
+  } else {
+    checkboxes.style.display = "none";
+    expanded = false;
+  }
+}
+</script>
+
+<style type="text/css">
+.multiselect {
+  width: 200px;
+}
+
+.selectBox {
+  position: relative;
+}
+
+.selectBox select {
+  width: 100%;
+  font-weight: bold;
+}
+
+.overSelect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+#checkboxes {
+  display: none;
+  border: 1px #dadada solid;
+}
+
+#checkboxes label {
+  display: block;
+}
+
+#checkboxes label:hover {
+  background-color: #1e90ff;
+}
+</style>
+
+<script>
+$(function (){
+	$("#publicdomain").val("westcentralus")
+    $("#privateip").val("10.0.20.10")
+	$("#ipsnumber").val("19")
+	$("#resourcegroup").val("lukas")
+	$("#proxyname").val("proxy")
+	$("#proxypassword").val("xxxxxxxxxx")
+	$("#proxyport").val("33333")
+	$("#username").val("centos")
+	$("#userpassword").val("xxxxxxxxxx")
+	$("#instancename").val("prwecentus")
+	$("#mainserverip").val("78.47.122.212")
+	$("#portalname").val("fedir")
+});
+</script>
+
+<script>
+$(function (){
+	$("#publicdomain1").val("norwayeast")
+    $("#privateip1").val("10.0.18.11")
+	$("#insnumber1").val("")
+	$("#resourcegroup1").val("lukas")
+	$("#username1").val("centos")
+	$("#userpassword1").val("xxxxxxxxxx")
+	$("#instancename1").val("manoreast")
+	$("#mainserverip1").val("78.47.122.212")
+	$("#portalname1").val("fedir")
+});
+</script>
+<table style="width:1800px">
+<tr>
+<td style="width:500px">
+<form action="azure2.php" id="formContact4" method="post">
+<div style="padding-left:25px;"><select id="publicdomain" name="pubdom">
+<option value="northeurope">northeurope</option>
+<option value="westeurope">westeurope</option>
+<option value="ukwest">ukwest</option>
+<option value="uksouth">uksouth</option>
+<option value="francecentral">francecentral</option>
+<option value="switzerlandnorth">switzerlandnorth</option>
+<option value="germanywestcentral">germanywestcentral</option>
+<option value="norwayeast">norwayeast</option>
+<option value="westus">westus</option>
+<option value="eastus">eastus</option>
+<option value="northcentralus">northcentralus</option>
+<option value="southcentralus">southcentralus</option>
+<option value="centralus">centralus</option>
+<option value="eastus2">eastus2</option>
+<option value="westcentralus">westcentralus</option>
+<option value="westus2">westus2</option>
+<option value="canadacentral">canadacentral</option>
+<option value="canadaeast">canadaeast</option>
+<option value="uaenorth">uaenorth</option>
+<option value="centralindia">centralindia</option>
+<option value="southindia">southindia</option>
+<option value="westindia">westindia</option>
+</select>&nbsp;&nbsp;select azure instance region</div><br>
+<div style="padding-left:25px;"><input style="width:200px;" id="privateip" name="privip" placeholder="private ip" type="text">&nbsp;&nbsp;private ip</div><br>
+<div style="padding-left:25px;"><input style="width:200px;" id="ipsnumber" name="ipnum" placeholder="number of ips" type="text">&nbsp;&nbsp;number of ips</div><br>
+<div style="padding-left:25px;"><input style="width:200px;" id="resourcegroup" name="group" placeholder="azure resource group" type="text">&nbsp;&nbsp;azure resource group</div><br>
+<div style="padding-left:25px;"><input style="width:200px;" id="proxyname" name="prname" placeholder="azure VM user name for proxy" type="text">&nbsp;&nbsp;azure VM user name for proxy</div><br>
+<div style="padding-left:25px;"><input style="width:200px;" id="proxypassword" name="prpass" placeholder="azure VM user password for proxy" type="text">&nbsp;&nbsp;azure VM user password for proxy</div><br>
+<div style="padding-left:25px;"><input style="width:200px;" id="proxyport" name="prport" placeholder="azure VM socks5 port for proxy" type="text">&nbsp;&nbsp;azure VM socks5 port for proxy</div><br>
+<div style="padding-left:25px;"><input style="width:200px;" id="username" name="uname" placeholder="azure VM root user name for ssh" type="text">&nbsp;&nbsp;azure VM root user name for ssh</div><br>
+<div style="padding-left:25px;"><input style="width:200px;" id="userpassword" name="upass" placeholder="azure VM root user password for ssh" type="text">&nbsp;&nbsp;azure VM root user password for ssh</div><br>
+<div style="padding-left:25px;"><input style="width:200px;" id="instancename" name="instname" placeholder="azure VM name" type="text" required pattern="\w{4,12}">&nbsp;&nbsp;azure VM name</div><br>
+<div style="padding-left:25px;"><input style="width:200px;" id="mainserverip" name="mainip" placeholder="main server IP" type="text">&nbsp;&nbsp;main server IP</div><br>
+<div style="padding-left:25px;"><input style="width:200px;" id="portalname" name="pname" placeholder="azure bash user name" type="text">&nbsp;&nbsp;azure bash user name</div><br>
+<div style="padding-left:25px;"><input type="Submit" value="Submit"></div><br><br><br>
+</form>
+</td>
+
+<td style="width:400px">
+<div style="padding-left:25px;"><a href="./azure2/centos.pub" download>Download centos.pub</a></div><br>
+<div style="padding-left:25px;"><a href="./azure2/centos.pem" download>Download centos.pem</a></div><br><br>
+<div style="padding-left:25px;"><a href="./azure2/createall.txt" target="_blank">Instances create commands for azure portal</a></div><br>
+<div style="padding-left:25px;"><a href="./azure2/installall.txt" target="_blank">Instances install commands for main server</a></div><br>
+<div style="padding-left:25px;"><a href="./azure2/stopall.txt" target="_blank">Instances stop commands for azure portal</a></div><br>
+<div style="padding-left:25px;"><a href="./azure2/startall.txt" target="_blank">Instances start commands for azure portal</a></div><br>
+<div style="padding-left:25px;"><a href="./azure2/startallssh.txt" target="_blank">Instances start commands for main server</a></div><br>
+<div style="padding-left:25px;"><a href="./azure2/proxyall.txt" target="_blank">IPs get commands for azure portal</a></div><br><br><br><br>
+<div style="padding-left:25px;"><a href="./azure2/restartall.txt" target="_blank">Restart commands for azure portal</a></div><br><br><br><br>
+</td>
+
+
+
+<td style="width:500px; padding-left:0px; border-left: 2px solid;">
+<form action="azure3.php" id="formContact5" method="post">
+<div style="padding-left:25px;"><select id="publicdomain1" name="pubdom1">
+<option value="northeurope">northeurope</option>
+<option value="westeurope">westeurope</option>
+<option value="ukwest">ukwest</option>
+<option value="uksouth">uksouth</option>
+<option value="francecentral">francecentral</option>
+<option value="switzerlandnorth">switzerlandnorth</option>
+<option value="germanywestcentral">germanywestcentral</option>
+<option value="norwayeast">norwayeast</option>
+<option value="westus">westus</option>
+<option value="eastus">eastus</option>
+<option value="northcentralus">northcentralus</option>
+<option value="southcentralus">southcentralus</option>
+<option value="centralus">centralus</option>
+<option value="eastus2">eastus2</option>
+<option value="westcentralus">westcentralus</option>
+<option value="westus2">westus2</option>
+<option value="canadacentral">canadacentral</option>
+<option value="canadaeast">canadaeast</option>
+<option value="uaenorth">uaenorth</option>
+<option value="centralindia">centralindia</option>
+<option value="southindia">southindia</option>
+<option value="westindia">westindia</option>
+</select>&nbsp;&nbsp;select azure instance region</div><br>
+<div style="padding-left:25px;"><input style="width:200px;" id="privateip1" name="privip1" placeholder="private ip" type="text">&nbsp;&nbsp;private ip</div><br>
+<div style="padding-left:25px;"><input style="width:200px;" id="insnumber1" name="innum1" placeholder="number of instances" type="text">&nbsp;&nbsp;number of instances</div><br>
+<div style="padding-left:25px;"><input style="width:200px;" id="resourcegroup1" name="group1" placeholder="azure resource group" type="text">&nbsp;&nbsp;azure resource group</div><br>
+<div style="padding-left:25px;"><input style="width:200px;" id="username1" name="uname1" placeholder="azure VM root user name for ssh" type="text">&nbsp;&nbsp;azure VM root user name for ssh</div><br>
+<div style="padding-left:25px;"><input style="width:200px;" id="userpassword1" name="upass1" placeholder="azure VM root user password for ssh" type="text">&nbsp;&nbsp;azure VM root user password for ssh</div><br>
+<div style="padding-left:25px;"><input style="width:200px;" id="instancename1" name="instname1" placeholder="azure VM name" type="text" required pattern="\w{4,12}">&nbsp;&nbsp;azure VM name</div><br>
+<div style="padding-left:25px;"><input style="width:200px;" id="mainserverip1" name="mainip1" placeholder="main server IP" type="text">&nbsp;&nbsp;main server IP</div><br>
+<div style="padding-left:25px;"><input style="width:200px;" id="portalname1" name="pname1" placeholder="azure bash user name" type="text">&nbsp;&nbsp;azure bash user name</div><br>
+<div style="padding-left:25px;"><input type="Submit" value="Submit"></div><br><br><br>
+</form>
+</td>
+
+<td style="width:400px">
+<div style="padding-left:25px;"><a href="./azure2/centos.pub" download>Download centos.pub</a></div><br>
+<div style="padding-left:25px;"><a href="./azure2/centos.pem" download>Download centos.pem</a></div><br><br>
+<div style="padding-left:25px;"><a href="./azure3/createall.txt" target="_blank">Instances create commands for azure portal</a></div><br>
+<div style="padding-left:25px;"><a href="./azure3/installall.txt" target="_blank">Instances install commands for main server</a></div><br>
+<div style="padding-left:25px;"><a href="./azure3/stopall.txt" target="_blank">Instances stop commands for azure portal</a></div><br>
+<div style="padding-left:25px;"><a href="./azure3/startall.txt" target="_blank">Instances start commands for azure portal</a></div><br>
+<div style="padding-left:25px;"><a href="./azure3/publicipsall.txt" target="_blank">Instance IPs commands for azure portal</a></div><br><br><br><br>
+</td>
+
+
+</tr>
+</table>
+
+</body>
+</html>
